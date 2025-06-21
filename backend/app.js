@@ -18,6 +18,9 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/funds', fundRoutes);
 
+app.get("/", (req, res) => {
+  res.send("<h1>✅ Server is running on http://localhost:5000</h1>");
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
